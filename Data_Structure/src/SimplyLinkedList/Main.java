@@ -32,6 +32,8 @@ public class Main {
 			
 			sll.add(std);
 			
+			System.out.println("test·Î Ãß°¡");
+			
 
 		}
 
