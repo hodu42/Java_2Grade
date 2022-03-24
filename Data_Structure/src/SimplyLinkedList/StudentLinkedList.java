@@ -32,6 +32,8 @@ public class StudentLinkedList {
 			
 			//sll.add(std);§±
 			
+			System.out.println("∫Ø∞Ê¡°");
+			
 
 		}
 
