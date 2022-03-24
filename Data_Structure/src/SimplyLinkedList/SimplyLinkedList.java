@@ -119,7 +119,7 @@ import java.util.Scanner;
 			if(size == 0) {addLast(e);}
 			else
 			{
-				if()
+				
 			}
 		}
 		
