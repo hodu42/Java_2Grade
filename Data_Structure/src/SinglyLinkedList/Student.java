@@ -1,9 +1,9 @@
-package SimplyLinkedList;
+package SinglyLinkedList;
 
 public class Student {
 		private int classNumber;
 		private String name;
-		private SimplyLinkedList <String> club;
+		private SinglyLinkedList <String> club;
 		
 		
 		Student()

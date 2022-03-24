@@ -1,4 +1,4 @@
-package SimplyLinkedList;
+package SinglyLinkedList;
 
 import java.util.Scanner;
 import java.io.File;

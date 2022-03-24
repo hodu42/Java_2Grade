@@ -1,8 +1,8 @@
-package SimplyLinkedList;
+package SinglyLinkedList;
 
 import java.util.Scanner;
 
-public class SimplyLinkedList<E> {
+public class SinglyLinkedList<E> {
 
 	private Node head;
 	private int size;
