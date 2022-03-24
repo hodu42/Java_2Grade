@@ -7,14 +7,15 @@ import java.io.IOException;
 public class StudentLinkedList {
 
 	public static void main(String[] args) throws IOException {
+
 		SimplyLinkedList sll = new SimplyLinkedList();
 
 		File doc = new File(args[0]);
 		Scanner sc = new Scanner(doc);
-		Student std = new Student();
+		
 
 		while (sc.hasNextLine()) {
-			
+			Student std = new Student();
 			int number = sc.nextInt();
 			String name = sc.next();
 			String club = sc.nextLine();
@@ -29,11 +30,18 @@ public class StudentLinkedList {
 			for (int i = 0; i < clubArray.length; i++) {
 				std.setClub(clubArray[i]);
 			}
-			
-			//sll.add(std);¤±
-			
-			System.out.println("º¯°æÁ¡");
-			
+
+			if (sll.getSize() == 0) {
+
+				sll.addFirst(std);
+
+			} else if (sll.getSize() == 1) {
+
+				if (sll. > std.getNumber()) {
+					
+				}
+
+			}
 
 		}
 
