@@ -28,5 +28,13 @@ public class Student {
 		
 		public int getNumber()		{return classNumber;}
 		
+		public String getName()		{return name;}
+		
+		public SinglyLinkedList <String> getClub()	{return club;}
+		
+		public String getClubName(int index) {
+			return club.getNode(index).getData();
+		}
+		
 }
 

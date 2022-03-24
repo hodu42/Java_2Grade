@@ -1,12 +1,7 @@
 package SinglyLinkedList;
 
-import java.util.Scanner;
 
 public class SinglyLinkedList<E> {
-
-	private Node head;
-	private int size;
-
 	public class Node<E> {
 		private E data;
 		private Node<E> next;
@@ -34,6 +29,10 @@ public class SinglyLinkedList<E> {
 		}
 
 	}
+
+	private Node<E> head;
+	private int size=0;
+
 	public int getSize() {return size;}
 
 	public void addFirst(E e) {
@@ -50,17 +49,17 @@ public class SinglyLinkedList<E> {
 		size++;
 	}
 
-	Node<E> getNode(int index) {
-		Node x = head;
+	Node <E> getNode(int index) {
+		Node<E> x = head;
 		for (int i = 0; i < index; i++) {
 			x = x.getNext();
 		}
 		return x;
 	}
 	
-	Node getCurNode() {
-		Node curNode = head;
-		Node prevNode = null;
+	Node<E> getCurNode() {
+		Node<E> curNode = head;
+		Node<E> prevNode = null;
 		prevNode = curNode;
 		curNode = prevNode.getNext();
 		
@@ -69,31 +68,31 @@ public class SinglyLinkedList<E> {
 	}
 
 	public void addAfter(E e, Node<E> prevNode) {
-		Node newNode = new Node(e);
+		Node<E> newNode = new Node<E>(e);
 		newNode.setNext(prevNode.getNext());
 		prevNode.setNext(newNode);
 
 	}
 
-	public String toString() {
+	public String toString(SinglyLinkedList <E> studentList) {
 		if (head == null) {
-			return "[]";
+			return "";
 		}
-		Node temp = head;
-		String str = "[";
+		Node<E> tmp = head;
+		String str = "";
 
-		while (temp.next != null) {
-			str += temp.getData() + ", ";
-			temp = temp.getNext();
+		while (tmp.next != null) {
+			str += tmp.getData() + " ";
+			tmp = tmp.getNext();
 		}
-		str += temp.getData();
-		return str + "]";
+		str += tmp.getData();
+		return str;
 	}
 
 	public void deleteAfter(Node<E> prevNode) {
 		if (prevNode == null)
 			return;
-		Node tmp = prevNode.getNext();
+		Node<E> tmp = prevNode.getNext();
 		prevNode.setNext(tmp.getNext());
 		tmp.setNext(null);
 	}
@@ -109,37 +108,5 @@ public class SinglyLinkedList<E> {
 			// 저장후
 			System.out.print("종료합니다.");
 		}
-	}
-
-	void add(E e) {
-		Node newNode = new Node(e);
-		Node curNode = head;
-		Node prevNode = null;
-
-		if (size == 0) {
-
-			addLast(e);
-
-		} else if (prevNode == null) {
-
-			if (curNode.getData().getNumber() > newNode.getData().getNumber()) {
-				addFirst(e);
-			} else if (curNode.getData().getNumber() < newNode.getData().getNumber()) {
-				prevNode = curNode;
-				curNode = curNode.getNext();
-			}
-		}
-
-		while (curNode != null) {
-
-			if (prevNode.getData().getNumber() < newNode.getData().getNumber() < curNode.getData().getNumber()) {
-				newNode.setNext(curNode);
-				prevNode.setNext(newNode);
-				prevNode = prevNode.getNext();
-				curNode = prevNode.getNext();
-			}
-
-		}
-
 	}
 }
