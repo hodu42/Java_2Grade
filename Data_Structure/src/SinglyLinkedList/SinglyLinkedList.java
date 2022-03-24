@@ -50,7 +50,7 @@ public class SinglyLinkedList<E> {
 		size++;
 	}
 
-	Node getNode(int index) {
+	Node<E> getNode(int index) {
 		Node x = head;
 		for (int i = 0; i < index; i++) {
 			x = x.getNext();

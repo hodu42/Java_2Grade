@@ -8,7 +8,7 @@ public class StudentLinkedList {
 
 	public static void main(String[] args) throws IOException {
 
-		SimplyLinkedList sll = new SimplyLinkedList();
+		SinglyLinkedList<Student> sll = new SinglyLinkedList<Student>();
 
 		File doc = new File(args[0]);
 		Scanner sc = new Scanner(doc);
@@ -37,7 +37,7 @@ public class StudentLinkedList {
 
 			} else if (sll.getSize() == 1) {
 
-				if (sll. > std.getNumber()) {
+				if (sll.getNode(0).getData().getNumber() > std.getNumber()) {
 					
 				}
 
