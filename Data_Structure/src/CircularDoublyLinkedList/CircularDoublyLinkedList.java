@@ -1,12 +1,14 @@
-package SinglyLinkedList;
+package CircularDoublyLinkedList;
 
-public class SinglyLinkedList<E> {
+public class CircularDoublyLinkedList<E> {
 	public class Node<E> {
 		private E data;
+		private Node<E> prev;
 		private Node<E> next;
-
+		
 		Node(E e) {
 			data = e;
+			prev = null;
 			next = null;
 		}
 
@@ -19,12 +21,20 @@ public class SinglyLinkedList<E> {
 			return data;
 		}
 
+		public Node<E> getPrev(){
+			return prev;
+		}
+		
 		public Node<E> getNext() {
 			return next;
 		}
 
 		public void setNext(Node<E> n) {
 			next = n;
+		}
+		
+		public void setPrev(Node<E> n) {
+			prev = n;
 		}
 
 	}

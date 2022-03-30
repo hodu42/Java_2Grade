@@ -13,8 +13,6 @@ public class Student {
 			club = new SinglyLinkedList<String>();
 		}
 		
-		
-		
 		void setStudent(int number, String name)
 		{
 			classNumber = number;

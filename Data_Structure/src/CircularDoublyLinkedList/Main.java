@@ -1,4 +1,4 @@
-package SinglyLinkedList;
+package CircularDoublyLinkedList;
 
 import java.util.Scanner;
 import java.io.File;
@@ -14,7 +14,7 @@ public class Main {
 		Scanner scFile = new Scanner(file);
 		Scanner scKeyboard = new Scanner(System.in);
 
-		SinglyLinkedList<Student> studentList = new SinglyLinkedList<Student>();
+		CircularDoublyLinkedList<Student> studentList = new CircularDoublyLinkedList<Student>();
 
 		readFile(studentList, scFile);
 
@@ -26,7 +26,7 @@ public class Main {
 
 	
 	
-	public static void runProgram(SinglyLinkedList<Student> sll, File file, Scanner kbd) throws IOException {
+	public static void runProgram(CircularDoublyLinkedList<Student> sll, File file, Scanner kbd) throws IOException {
 		int menu = 0;
 		
 		while (menu != 4) {
@@ -61,14 +61,14 @@ public class Main {
 		System.out.println("========================================");
 	}
 	
-	public static void print(SinglyLinkedList<Student> sll) {
+	public static void print(CircularDoublyLinkedList<Student> sll) {
 		for (int i = 0; i < sll.getSize(); i++) {
 			System.out.println(sll.getNode(i).getData().toString());
 		}
 
 	}
 
-	public static void save(SinglyLinkedList<Student> sll, File file) throws IOException {
+	public static void save(CircularDoublyLinkedList<Student> sll, File file) throws IOException {
 
 		FileWriter fw = new FileWriter(file);
 		BufferedWriter bw = new BufferedWriter(fw);
@@ -81,38 +81,29 @@ public class Main {
 
 	}
 
-	public static void addStudent(SinglyLinkedList<Student> sll, Scanner sc) {
+	public static void addStudent(CircularDoublyLinkedList<Student> sll, Scanner sc) {
 		Student std = getStudent(sll, sc);
 		addStudentByNumber(sll, std);
 	}
 	
-	public static Student getStudent(SinglyLinkedList<Student> sll, Scanner sc) {
+	public static Student getStudent(CircularDoublyLinkedList<Student> sll, Scanner sc) {
 		Student std = new Student();
 
 		int number = sc.nextInt();
 		String name = sc.next();
-		String club = sc.nextLine();
-		String[] clubArr = null;
-
-		if (club != null) {
-			clubArr = club.split("/");
-			for (int i = 0; i < clubArr.length; i++) {
-				std.setClub(clubArr[i]);
-			}
-		}
 
 		std.setStudent(number, name);
 		
 		return std;
 	}
 	
-	public static void readFile(SinglyLinkedList<Student> sll, Scanner sc) {
+	public static void readFile(CircularDoublyLinkedList<Student> sll, Scanner sc) {
 		while(sc.hasNextLine()) {
 			addStudent(sll, sc);
 		}
 	}
 	
-	public static void addStudentByNumber(SinglyLinkedList<Student> sll, Student std) {
+	public static void addStudentByNumber(CircularDoublyLinkedList<Student> sll, Student std) {
 		if (sll.getSize() == 0) {
 			sll.addFirst(std);
 		} else if (sll.getSize() == 1) {
@@ -140,7 +131,7 @@ public class Main {
 		}
 	}
 
-	public static void delete(SinglyLinkedList<Student> sll, int number) {
+	public static void delete(CircularDoublyLinkedList<Student> sll, int number) {
 		if (sll.getSize() == 0) {
 			System.out.print("지울 내용이 존재하지 않습니다.");
 		}
