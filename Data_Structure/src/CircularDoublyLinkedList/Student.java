@@ -1,6 +1,6 @@
 package CircularDoublyLinkedList;
 
-public class Student {
+public class Student implements Comparable <Student>  {
 		private int classNumber;
 		private String name;
 		
@@ -25,6 +25,17 @@ public class Student {
 			str = classNumber + " " + name;
 			
 			return str;
+		}
+
+		@Override
+		public int compareTo(Student std) {
+			if(std.getNumber() > classNumber) {
+				return 1;
+			}
+			else if (std.getNumber() < classNumber) {
+				return -1;
+			}
+			return 0;
 		}
 		
 }

@@ -10,11 +10,6 @@ public class SinglyLinkedList<E> {
 			next = null;
 		}
 
-		Node(E e, Node<E> next) {
-			data = e;
-			this.next = next;
-		}
-
 		public E getData() {
 			return data;
 		}
@@ -29,8 +24,14 @@ public class SinglyLinkedList<E> {
 
 	}
 
+
 	private Node<E> head;
-	private int size = 0;
+	private int size;
+	
+	public SinglyLinkedList(){
+		head = null;
+		size = 0;
+	}
 	
 	public int getSize() {
 		return size;

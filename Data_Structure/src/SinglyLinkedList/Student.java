@@ -21,7 +21,7 @@ public class Student {
 		
 		public void setClub(String club)
 		{
-			this.club.add(club);
+			this.club.addFirst(club);
 		}
 		
 		public int getNumber()		{return classNumber;}
@@ -36,11 +36,11 @@ public class Student {
 		
 		public String toString(){
 			String str = "";
-			str = classNumber + " " + name;
+			str = classNumber + " " + name + " ";
 			if(club.getSize() != 0) {
 				str += getClubName(0);
 				for(int i = 1; i < club.getSize(); i++) {
-					str += "/" + getClubName(i);
+					str += "/" + getClubName(i).trim();
 				}
 			}
 			return str;
